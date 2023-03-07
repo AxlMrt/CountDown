@@ -1,0 +1,13 @@
+header {
+  width: 100%;
+  color: var(--white);
+  font-size: calc(1750vh / 1440);
+  text-align: center;
+  margin: 9.7rem 0 7.35rem 0;
+}
+
+@media screen and (max-width: 790px) {
+  header {
+    margin: 10rem 0 3.5rem 0;
+  }
+}

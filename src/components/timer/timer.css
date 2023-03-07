@@ -1,0 +1,197 @@
+.countdown {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  gap: 2.3rem;
+}
+
+.countdown > div {
+  text-align: center;
+}
+
+.countdown > div > span {
+  font-size: 1rem;
+}
+
+.digit_container {
+  width: 10.5rem;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: .78rem;
+}
+
+.segment-display {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: 5.5rem;
+  font-weight: 700;
+}
+
+.segment-display-top,
+.segment-display-bottom {
+  background: none;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  height: 50%;
+  letter-spacing: 0;
+}
+
+.segment-display-top {
+  background: var(--top_card);
+  color: var(--soft_red-top);
+  line-height: 1.85;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+
+.segment-display-bottom {
+  background: var(--desatured_blue);
+  color: var(--soft_red);
+  line-height: 0;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  box-shadow: 0px 8px 15px var(--card_shadow);
+}
+
+.segment-overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  perspective: 400px;
+}
+
+.segment-overlay_top,
+.segment-overlay_bottom {
+  position: absolute;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  height: 50%;
+  letter-spacing: 0;
+  object-fit: contain;
+}
+
+.segment-overlay_top {
+  top: 0;
+  line-height: 1.85;
+  color: var(--soft_red-top);
+  background: var(--top_card);
+  transform-origin: bottom;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+
+.segment-overlay_bottom {
+  bottom: 0;
+  line-height: 0;
+  color: var(--soft_red);
+  background: var(--desatured_blue);
+  border-top: 1px solid black;
+  transform-origin: top;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.segment-overlay.flip .segment-overlay_top {
+  animation: flip-top .5s linear;
+}
+
+.segment-overlay.flip .segment-overlay_bottom {
+  animation: flip-bottom .5s linear;
+}
+
+/* inner border*/
+
+i {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--black_blue);
+}
+
+.left {
+  top: 4.6rem;
+  left: -.6rem;
+}
+
+.right {
+  top: 4.6rem;
+  right: -.6rem;
+}
+
+@keyframes flip-top {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50%, 100% {
+    transform: rotateX(-90deg);
+  }
+}
+
+@keyframes flip-bottom {
+  0%, 50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+
+@media screen and (max-width: 790px) {
+  .countdown {
+    gap: 1.10rem;
+  }
+
+  .digit_container {
+    width: 5rem;
+    height: 4.58rem;
+  }
+
+  .countdown > div > span {
+    font-size: .5rem;
+    letter-spacing: 3px;
+  }
+
+  .segment-display-bottom {
+    box-shadow: 0px 2px 8px var(--card_shadow);
+  }
+
+  .segment-display {
+  font-size: 2.5rem;
+  }
+
+  .segment-display-top {
+    line-height: 1.9;
+  }
+
+  .segment-overlay_top {
+    line-height: 1.9;
+  }
+
+  /* inner border */
+
+  i {
+    width: .4rem;
+    height: .4rem;
+  }
+
+  .left {
+    top: 2.15rem;
+    left: -.2rem;
+  }
+
+  .right {
+    top: 2.15rem;
+    right: -.2rem;
+  }
+}

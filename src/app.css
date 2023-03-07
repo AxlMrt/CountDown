@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap');
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --soft_red-top: hsl(345, 71%, 59%);
+  --soft_red: hsl(345, 95%, 68%);
+  --grayish_blue: hsl(237, 18%, 59%);
+  --top_card: hsl(237, 21%, 21%);
+  --desatured_blue: hsl(236, 21%, 26%);
+  --black_blue: hsl(234, 17%, 12%);
+  --card_shadow: rgba(0, 0, 0, .5);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+  font-family: 'Red Hat Text', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.55rem;
+  color: var(--grayish_blue);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: url('./assets/bg-stars.svg') fixed;
+  background-color: var(--black_blue);
+}
